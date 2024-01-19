@@ -5,9 +5,9 @@
 export async function handleHttpRequest(request) {
     let url = request.url;
     for (let i = 0; i < 1000; i++) {
-        url += url;
+        url += request.url;
     }
-    return new Response(url, {
+    return new Response(url.length, {
         status: 200,
         headers: {
             'content-type': 'text/plain',
